@@ -1,5 +1,5 @@
 // Responsive homepage with hamburger menu and mobile optimizations
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   Layout,
   Typography,
@@ -82,7 +82,7 @@ const Home = () => {
     },
   ];
 
-  const scrollTo = (id) => {
+  const scrollTo = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -267,7 +267,7 @@ const Home = () => {
           Latest Blog Posts
         </Title>
         <Row gutter={[24, 24]} justify="center">
-          {mediumPosts.map((post) => (
+          {mediumPosts.map((post: any) => (
             <Col key={post.guid} xs={24} md={12} lg={8}>
               <Card
                 title={post.title}
@@ -404,7 +404,7 @@ const Home = () => {
               />
               <textarea
                 name="message"
-                rows="5"
+                rows={5}
                 placeholder="Your Message"
                 required
                 style={{
